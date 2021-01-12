@@ -202,9 +202,9 @@ public class DashboardFeatureProviderImpl implements DashboardFeatureProvider {
             Drawable iconDrawable = tileIcon.loadDrawable(preference.getContext());
             if (tile.getPackageName().equals(PACKAGENAME_GMS)
                     && tile.getTitle(preference.getContext()).toString().equalsIgnoreCase("Google")) {
-                iconDrawable = preference.getContext().getDrawable(R.drawable.ic_homepage_google_settings);
+                iconDrawable = preference.getContext().getDrawable(R.drawable.ic_homepage_google);
             } else if (tile.getPackageName().equals(PACKAGENAME_WELLBEING)) {
-                iconDrawable = preference.getContext().getDrawable(R.drawable.ic_homepage_wellbeing_settings);
+                iconDrawable = preference.getContext().getDrawable(R.drawable.ic_homepage_wellbeing);
             } else if (forceRoundedIcon
                     && !TextUtils.equals(mContext.getPackageName(), tile.getPackageName())) {
                 iconDrawable = new AdaptiveIcon(mContext, iconDrawable);
