@@ -52,8 +52,8 @@ LOCAL_STATIC_JAVA_LIBRARIES := \
     settings-logtags \
     zxing-core-1.7 \
     org.lineageos.platform.internal \
+    vendor.lineage.fastcharge-V1.0-java \
     faceunlock_utils
-	
 LOCAL_PROGUARD_FLAG_FILES := proguard.flags
 
 ifneq ($(INCREMENTAL_BUILDS),)
