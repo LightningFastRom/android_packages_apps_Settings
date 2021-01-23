@@ -28,7 +28,7 @@
         android:maxLines="2"
         android:ellipsize="end"
         android:textAppearance="@style/TextAppearance.Switch"
-        android:textColor="?android:attr/textColorPrimaryInverse"
+        android:textColor="?android:attr/textColorPrimary"
         android:textAlignment="viewStart"/>
 
     <ImageView
@@ -45,8 +45,7 @@
         android:id="@+id/switch_widget"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:theme="@style/Widget.SwitchBar.Switch"/>
+        android:layout_gravity="center_vertical"/>
 
 </merge>
 
