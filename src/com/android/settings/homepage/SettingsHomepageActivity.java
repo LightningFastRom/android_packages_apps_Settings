@@ -78,7 +78,6 @@ public class SettingsHomepageActivity extends FragmentActivity {
 
         
         //final AvatarViewMixin avatarViewMixin = new AvatarViewMixin(this, avatarView);
-		if (!getSystemService(ActivityManager.class).isLowRamDevice()) {
 			avatarView = root.findViewById(R.id.account_avatar);
 			avatarView.setImageDrawable(getCircularUserIcon(context));
 			avatarView.setOnClickListener(new View.OnClickListener() {
@@ -89,14 +88,6 @@ public class SettingsHomepageActivity extends FragmentActivity {
 					startActivity(intent);
 				}
 			});
-			
-			if(isMultiUserEnabled(context)) {
-        	    avatarView.setVisibility(View.VISIBLE);
-        	} else {
-        	    avatarView.setVisibility(View.GONE);
-        	}
-		}
-		
         //getLifecycle().addObserver(avatarViewMixin);
 
         if (!getSystemService(ActivityManager.class).isLowRamDevice()) {
@@ -155,13 +146,7 @@ public class SettingsHomepageActivity extends FragmentActivity {
     @Override
     public void onResume() {
         super.onResume();
-		if (!getSystemService(ActivityManager.class).isLowRamDevice()) {
-        	if(isMultiUserEnabled(getApplicationContext())) {
-        	    avatarView.setImageDrawable(getCircularUserIcon(getApplicationContext()));
-        	    avatarView.setVisibility(View.VISIBLE);
-        	} else {
-        	    avatarView.setVisibility(View.GONE);
-        	}
-		}
+            avatarView.setImageDrawable(getCircularUserIcon(getApplicationContext()));
+
     }
 }
