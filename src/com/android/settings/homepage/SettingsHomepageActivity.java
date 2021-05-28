@@ -76,29 +76,27 @@ public class SettingsHomepageActivity extends FragmentActivity {
         FeatureFactory.getFactory(this).getSearchFeatureProvider()
                 .initSearchToolbar(this /* activity */, toolbar, SettingsEnums.SETTINGS_HOMEPAGE);
 
-        
-        //final AvatarViewMixin avatarViewMixin = new AvatarViewMixin(this, avatarView);
+        avatarView = root.findViewById(R.id.account_avatar);
+		
 		if (!getSystemService(ActivityManager.class).isLowRamDevice()) {
-			avatarView = root.findViewById(R.id.account_avatar);
-			avatarView.setImageDrawable(getCircularUserIcon(context));
-			avatarView.setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View v) {
-					Intent intent = new Intent(Intent.ACTION_MAIN);
-					intent.setComponent(new ComponentName("com.android.settings","com.android.settings.Settings$UserSettingsActivity"));
-					startActivity(intent);
-				}
-			});
-			
-			if(isMultiUserEnabled(context)) {
+            if(isMultiUserEnabled(context)) {
+                avatarView.setImageDrawable(getCircularUserIcon(context));
+                avatarView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(Intent.ACTION_MAIN);
+                        intent.setComponent(new ComponentName("com.android.settings","com.android.settings.Settings$UserSettingsActivity"));
+                        startActivity(intent);
+                    }
+                });
         	    avatarView.setVisibility(View.VISIBLE);
         	} else {
         	    avatarView.setVisibility(View.GONE);
         	}
-		}
+		} else {
+            avatarView.setVisibility(View.GONE);
+        }
 		
-        //getLifecycle().addObserver(avatarViewMixin);
-
         if (!getSystemService(ActivityManager.class).isLowRamDevice()) {
             // Only allow contextual feature on high ram devices.
             showFragment(new ContextualCardsFragment(), R.id.contextual_cards_content);
@@ -162,6 +160,8 @@ public class SettingsHomepageActivity extends FragmentActivity {
         	} else {
         	    avatarView.setVisibility(View.GONE);
         	}
-		}
+		} else {
+            avatarView.setVisibility(View.GONE);
+        }
     }
 }
