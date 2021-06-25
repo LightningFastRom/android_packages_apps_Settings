@@ -31,6 +31,7 @@ import android.text.TextUtils;
 
 import androidx.annotation.VisibleForTesting;
 import androidx.preference.ListPreference;
+import androidx.preference.SwitchPreference;
 import androidx.preference.Preference;
 
 import com.android.settings.R;
@@ -104,9 +105,17 @@ public class SoundSettings extends DashboardFragment implements OnActivityResult
         }
 		
 		mVibrator = (Vibrator) this.getSystemService(Context.VIBRATOR_SERVICE);
+		
+		final String VIBRATION_PREFERENCES_FRAGMENT= "vibration_preferences_fragment";
+		final String CHARGING_PREFERENCES= "charging_sounds";
+		final SwitchPreference charging_sounds = findPreference(CHARGING_PREFERENCES);
+		
 		if (mVibrator != null && !mVibrator.hasVibrator()) {
-            final String VIBRATION_PREFERENCES_FRAGMENT= "vibration_preferences_fragment";
 			this.removePreference(VIBRATION_PREFERENCES_FRAGMENT);
+			
+			charging_sounds.setTitle(R.string.charging_sounds_alt_title);
+        } else {
+            charging_sounds.setTitle(R.string.charging_sounds_title);
         }
     }
 
