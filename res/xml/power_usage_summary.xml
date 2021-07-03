@@ -52,17 +52,17 @@
         android:key="battery_lights"
         lineage:requiresConfig="@*lineageos.platform:integer/config_deviceLightCapabilities"
         lineage:requiresConfigMask="64" />
+    
+    <!-- Battery percent -->
+    <lineageos.preference.SystemSettingSwitchPreference
+        android:key="status_bar_show_battery_percent"
+        android:title="@string/battery_percentage"
+        android:summary="@string/battery_percentage_description" />
 
     <!-- Custom perf profiles settings -->
     <org.lineageos.internal.lineageparts.LineagePartsPreference
         android:key="perf_profile_settings"
         lineage:replacesKey="battery_saver_summary" />
-
-    <SwitchPreference
-        android:key="battery_percentage"
-        android:title="@string/battery_percentage"
-        android:summary="@string/battery_percentage_description"
-        settings:controller="com.android.settings.display.BatteryPercentagePreferenceController" />
 
     <SwitchPreference
         android:key="fast_charging"
@@ -80,28 +80,26 @@
         android:key="screen_usage"
         android:title="@string/device_screen_usage"
         android:selectable="false" />
-	
 
-    <PreferenceCategory
-        android:title="@string/battery_health_title">
-        <com.android.settings.fuelgauge.PowerGaugePreference
-            android:key="health"
-            android:title="@string/battery_health_status_title"
-            android:selectable="false" />
+    <com.android.settings.fuelgauge.PowerGaugePreference
+        android:key="battery_temp"
+        android:title="@string/battery_temp"
+        android:selectable="false"  
+        settings:allowDividerAbove="true" />
 
-        <com.android.settings.fuelgauge.PowerGaugePreference
-            android:key="cycle_count"
-            android:title="@string/battery_cycle_count_title"
-            android:selectable="false" />
+    <com.android.settings.fuelgauge.PowerGaugePreference
+        android:key="health"
+        android:title="@string/battery_health_status_title"
+        android:selectable="false" />
+
+    <com.android.settings.fuelgauge.PowerGaugePreference
+        android:key="cycle_count"
+        android:title="@string/battery_cycle_count_title"
+        android:selectable="false" />
         
-        <com.android.settings.fuelgauge.PowerGaugePreference
-            android:key="charge_type"
-            android:title="@string/battery_charge_type_title"
-            android:selectable="false" />
+    <com.android.settings.fuelgauge.PowerGaugePreference
+        android:key="charge_type"
+        android:title="@string/battery_charge_type_title"
+        android:selectable="false" />
 
-        <com.android.settings.fuelgauge.PowerGaugePreference
-            android:key="battery_temp"
-            android:title="@string/battery_temp"
-            android:selectable="false" />
-    </PreferenceCategory>
 </PreferenceScreen>
