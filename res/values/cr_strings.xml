@@ -15,24 +15,6 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-
-    <!-- Carbon Fibers -->
-    <string name="cf_settings_title">Carbon Fibers</string>
-    <string name="cf_dashboard_summary">A healthy source of your daily fiber</string>
-
-    <string name="gesture_double_tap_power_torch_toast">Screen off torch gesture is now disabled</string>
-
-    <!-- App details: open play store link if app is user installed -->
-    <string name="app_play_store">Google Play</string>
-    
-    <!-- Manage applications, package string displayed in app snippet -->
-    <string name="packagename_text"><xliff:g id="package_name">%1$s</xliff:g></string>
-
-    <!-- CarbonROM version -->
-    <string name="carbon_version">CarbonROM version</string>
-    <string name="summary_placeholder">N/A</string>
-    <string name="carbon_vendor_security_patch">Vendor security patch level</string>
-
     <!-- Battery temperature -->
     <string name="battery_temp">Battery temperature</string>
 </resources>

@@ -11,7 +11,6 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-
     <!-- Config Center -->
     <string name="config_center_title">Configuration Center</string>
     <string name="config_center_dashboard_summary">Home of customizations</string>
